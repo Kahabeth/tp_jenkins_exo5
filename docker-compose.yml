@@ -1,8 +1,8 @@
 # Note : le docker compose est un outil d'IaC (Infra as Code) qui va interpréter
-votre fichier pour faire la ligne de commande docker équivalente.
+# votre fichier pour faire la ligne de commande docker équivalente.
 web_server:
-image: my_server:latest
-container_name: TEST
-restart: always
-ports:
-- 8090:80
+  image: my_server:latest
+  container_name: TEST
+  restart: always
+  ports:
+    - 8091:80
