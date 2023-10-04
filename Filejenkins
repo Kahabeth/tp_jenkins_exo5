@@ -5,8 +5,14 @@ pipeline {
         stages {
             stage('Docker build') {
                 steps {
-                    sh 'docker build -t 57.128.115.80:latest - < Dockerfile'
+                    sh 'docker build -t my_server:latest - < Dockerfile'
                 }
             }
-        }
+            stage ('Test image') {
+                steps {
+                    docker run -p 8090:8080 -d --name test_jenkins my_server:latest
+                    sh [ "This is my super app" = "$(curl http://localhost:8090/)" ]
+                    docker rm -f test_jenkins
+                }
+            }
 }
