@@ -3,7 +3,7 @@ pipeline {
         stages {
             stage('Docker build') {
                 steps {
-                    sh 'docker build -t my_server:latest - < Dockerfile'
+                    sh 'docker build -t 57.128.115.80:latest - < Dockerfile'
                 }
             }
         }
