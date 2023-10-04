@@ -17,7 +17,7 @@ pipeline {
                 }
             }
             stage ('MEP') {
-                docker-compose up -d --force-recreate
+               sh 'docker-compose up -d --force-recreate'
             }
         }
 }
