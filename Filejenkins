@@ -15,4 +15,5 @@ pipeline {
                     docker rm -f test_jenkins
                 }
             }
+        }
 }
